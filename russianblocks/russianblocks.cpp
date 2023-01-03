@@ -6,7 +6,7 @@ const int row = 32;
 const int line = 25;
 bool handycaps = 1;		//disable or enable handycap
 int handycapn = 30;		//number of handycap
-int slpt = 500;				//sleep time
+int slpt = 550;				//sleep time
 //the numbers in background should reprisent as below.
 //0 is for empty, printed as " "
 //1 is for block, printed as []
@@ -530,11 +530,16 @@ int main()
 {
 	srand((unsigned)time(NULL));
 	cout << "press ENTER to start the game!";
-	cin >> cheat;
+	cheat = getchar();
 	if (cheat == 'h')
 	{
 		cout << "input level number: ";
 		cin >> level;
+		if (level > 5)
+			level = 5;
+		else if (level < 0)
+			level = 0;
+		flevel = 5 * level;
 	}
 	generate();
 	blockload();
@@ -550,10 +555,18 @@ int main()
 			gks = 0;
 		if(gks == 0)
 			gk = 'v';
-		if (plevel < level)
-		{
-			slpt -= 200;
-		}
+		if(level==0)
+			slpt=550;
+		else if(level==1)
+			slpt=450;
+		else if(level==2)
+			slpt=350;
+		else if(level==3)
+			slpt=250;
+		else if(level==4)
+			slpt=150;
+		else if(level==5)
+			slpt=50;
 		blocker();
 		checkgame();
 		printer();
