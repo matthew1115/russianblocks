@@ -78,7 +78,7 @@ bool needload = 0,gks = 0;
 int background[row][line], dump[row][line];
 int i, n, m;
 int q, k, type, flag = 1, fulline = 0, level = 0;
-int flevel = 0, plevel;
+int flevel = 0;
 char gk;
 int clearline;
 int turnednum=0;		//debug use
@@ -123,8 +123,7 @@ void cleanfull()
 		}
 	}
 	flevel++;
-	plevel = level;
-	level = flevel / 5;
+	level = (flevel - flevel % 5) / 5;
 }
 
 void checkgame()		//check if loose and if full line
