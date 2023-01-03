@@ -2,7 +2,7 @@
 #include <Windows.h>
 using namespace std;
 
-const int row = 32;
+const int row = 27;
 const int line = 25;
 bool handycaps = 1;		//disable or enable handycap
 int handycapn = 30;		//number of handycap
