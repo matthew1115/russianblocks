@@ -212,7 +212,7 @@ void shape(int t,int tx,int ty)//a[5]is the centre
 	else if(t==3)										//^**
 	{													//  *
 		for(int i=1;i<=3;++i) a[i].y=ty,a[i].x=tx+i-1;
-		a[4].x=tx+2;a[4].y=2;
+		a[4].x=tx+2;a[4].y=ty+1;
 	}
 	else if(t==4)										//^
 	{													//***
@@ -347,115 +347,114 @@ void turnblock()
 		checkturn();
 		type=18;
 	}
-	if(type==1)
+	else if(type==1)
 	{
 		shape(15,d[5].x,d[5].y);
 		checkturn();
 		type=15;
 	}
-	if(type==2)
+	else if(type==2)
 	{
 		shape(14,d[5].x,d[5].y);
 		checkturn();
 		type=14;
 	}
-	if(type==3)
+	else if(type==3)
 	{
 		shape(13,d[5].x,d[5].y);
 		checkturn();
 		type=13;
 	}
-	if(type==4)
+	else if(type==4)
 	{
 		shape(12,d[5].x,d[5].y);
 		checkturn();
 		type=12;
 	}
-	if(type==5)
+	else if(type==5)
 	{
 		shape(11,d[5].x,d[5].y);
 		checkturn();
 		type=11;
 	}
-	if(type==6)
+	else if(type==6)
 	{
 		shape(10,d[5].x,d[5].y);
 		checkturn();
 		type=10;
 	}
-	if(type==7)
+	else if(type==7)
 	{
 		shape(17,d[5].x,d[5].y);
 		checkturn();
 		type=17;
 	}
-	if(type==8)
+	else if(type==8)
 	{
 		shape(16,d[5].x,d[5].y);
 		checkturn();
 		type=16;
 	}
-	if(type==9)
+	else if(type==9)
 	{
 		shape(9,d[5].x,d[5].y);
 		checkturn();
 		type=9;
 	}
-	if(type==10)
+	else if(type==10)
 	{
 		shape(1,d[5].x,d[5].y);
 		checkturn();
 		type=1;
 	}
-	if(type==11)
+	else if(type==11)
 	{
 		shape(2,d[5].x,d[5].y);
 		checkturn();
 		type=2;
 	}
-	if(type==12)
+	else if(type==12)
 	{
 		shape(3,d[5].x,d[5].y);
 		checkturn();
 		type=3;
 	}
-	if(type==13)
+	else if(type==13)
 	{
 		shape(4,d[5].x,d[5].y);
 		checkturn();
 		type=4;
 	}
-	if(type==14)
+	else if(type==14)
 	{
 		shape(5,d[5].x,d[5].y);
 		checkturn();
 		type=5;
 	}
-	if(type==15)
+	else if(type==15)
 	{
 		shape(6,d[5].x,d[5].y);
 		checkturn();
 		type=6;
 	}
-	if(type==16)
+	else if(type==16)
 	{
 		shape(8,d[5].x,d[5].y);
 		checkturn();
 		type=8;
 	}
-	if(type==17)
+	else if(type==17)
 	{
 		shape(7,d[5].x,d[5].y);
 		checkturn();
 		type=7;
 	}
-	if(type==18)
+	else if(type==18)
 	{
 		shape(0,d[5].x,d[5].y);
 		checkturn();
 		type=0;
 	}
-	
 }
 
 int generate()
