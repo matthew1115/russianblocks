@@ -77,10 +77,12 @@ block a[6],d[6];		//use a[1] to a[4] , a[0] is not used, a[5] is for the turning
 bool needload = 0,gks = 0;
 int background[row][line], dump[row][line];
 int i, n, m;
-int q, k, type, flag = 1, fulline = 0;
+int q, k, type, flag = 1, fulline = 0, level = 0;
+int flevel = 0, plevel;
 char gk;
 int clearline;
 int turnednum=0;		//debug use
+char cheat;
 
 void handcap()
 {
@@ -120,8 +122,9 @@ void cleanfull()
 			background[i][m + 1] = dump[i][m];
 		}
 	}
-	if(slpt>100)
-		slpt-=20;
+	flevel++;
+	plevel = level;
+	level = flevel / 5;
 }
 
 void checkgame()		//check if loose and if full line
@@ -526,6 +529,13 @@ void printer()
 int main()
 {
 	srand((unsigned)time(NULL));
+	cout << "press ENTER to start the game!";
+	cin >> cheat;
+	if (cheat == 'h')
+	{
+		cout << "input level number: ";
+		cin >> level;
+	}
 	generate();
 	blockload();
 	printer();
@@ -540,6 +550,10 @@ int main()
 			gks = 0;
 		if(gks == 0)
 			gk = 'v';
+		if (plevel < level)
+		{
+			slpt -= 200;
+		}
 		blocker();
 		checkgame();
 		printer();
