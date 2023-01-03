@@ -579,6 +579,7 @@ int main()
 		Sleep(slpt);
 	}
 	cout << "Game Over" << endl;
+	cout << "Your level is " << level;
 	cin >> i;
 }
 
